@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAS Business Solutions - Market Development Expertise</title>
+    <style>
+        :root {
+            --primary: #0F766E;
+            --primary-light: #14B8A6;
+            --secondary: #0EA5E9;
+            --light: #F0FDFA;
+            --dark: #134E4A;
+            --text: #334155;
+            --text-light: #94A3B8;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .brochure {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Cover Page */
+        .cover {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .cover h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .cover h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .logo-container {
+            margin-bottom: 2rem;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            background-color: white;
+            border-radius: 16px;
+            padding: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-top: 2rem;
+        }
+        
+        /* Inside Pages */
+        .page {
+            padding: 3rem 2rem;
+            background-color: white;
+        }
+        
+        .section {
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-light);
+        }
+        
+        .summary {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .expertise-item {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .expertise-item h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Process Flow */
+        .process-flow {
+            margin: 3rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .process-flow:before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            background-color: var(--primary-light);
+            z-index: 1;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 0 10px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .step-desc {
+            font-size: 0.9rem;
+        }
+        
+        /* Case Studies */
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .case-study {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .case-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+        }
+        
+        .case-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .case-client {
+            font-style: italic;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .case-content {
+            padding: 1.5rem;
+        }
+        
+        .case-section {
+            margin-bottom: 1rem;
+        }
+        
+        .case-section h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Service Section */
+        .services {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .services h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .services-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .services-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .services-list span.icon {
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-detail {
+            margin: 0.5rem 0;
+        }
+        
+        .contact-label {
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .expertise-grid, .case-studies {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-flow:before {
+                display: none;
+            }
+            
+            .process-step {
+                margin-bottom: 2rem;
+            }
+            
+            .cover h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cover h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="brochure">
+        <!-- Cover Page -->
+        <section class="cover">
+            <div class="logo-container">
+                <div class="logo">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0" y="0" width="45" height="100" fill="#0F766E"/>
+                        <rect x="50" y="0" width="50" height="45" fill="#0F766E"/>
+                        <rect x="50" y="50" width="50" height="50" fill="#0F766E"/>
+                    </svg>
+                </div>
+            </div>
+            <h1>TAS Business Solutions</h1>
+            <h2>Market Development & Business Growth</h2>
+            <p class="tagline">Strategic expertise for international expansion</p>
+        </section>
+        
+        <!-- Executive Summary Page -->
+        <section class="page">
+            <div class="section">
+                <h2 class="section-title">Executive Summary</h2>
+                <p class="summary">
+                    With over 9 years of success accelerating market entry and optimizing business operations, TAS Business Solutions delivers measurable results for manufacturers, distributors, and service providers. Our expertise has generated <strong>$1.4M+</strong> in revenue growth for clients specifically in AFO (Ankle-Foot Orthosis) products, achieved <strong>33% year-over-year sales increases</strong> in international markets for AFO product categories, and created <strong>millions in value</strong> through strategic planning and implementation over the company lifecycle.
+                </p>
+                
+                <div style="margin-top: 2rem;">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Innovation-Driven Approach</h3>
+                    <p>As part of my ongoing development in the AI for Leaders program, I am exploring how to integrate innovative tools with proven business expertise to create tangible value for international businesses seeking sustainable growth.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Our Expertise</h2>
+                <div class="expertise-grid">
+                    <div class="expertise-item">
+                        <h3>Market Entry Strategy</h3>
+                        <p>Data-driven approach to new market validation and entry planning</p>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <h3>Business Development</h3>
+                        <p>Partnerships, distribution networks, and growth planning</p>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <h3>Channel Optimization</h3>
+                        <p>Distribution strategy and partner engagement models</p>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <h3>Customer Acquisition</h3>
+                        <p>Target identification and engagement strategies</p>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <h3>International Expansion</h3>
+                        <p>Cross-border growth strategies for sustainable development</p>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <h3>Supply Chain Management</h3>
+                        <p>Optimizing logistics and distribution processes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Methodology Page -->
+        <section class="page">
+            <div class="section">
+                <h2 class="section-title">Our Approach</h2>
+                <p style="margin-bottom: 2rem;">We follow a structured methodology that delivers results through a clear process:</p>
+                
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <p class="step-title">ASSESS</p>
+                        <p class="step-desc">Define objectives & opportunities</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <p class="step-title">DESIGN</p>
+                        <p class="step-desc">Create targeted solutions</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <p class="step-title">IMPLEMENT</p>
+                        <p class="step-desc">Execute with clear metrics</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <p class="step-title">EVALUATE</p>
+                        <p class="step-desc">Measure impact & results</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <p class="step-title">GROW</p>
+                        <p class="step-desc">Expand successful initiatives</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin: 3rem 0;">
+                    <p style="font-size: 1.2rem; font-style: italic; color: var(--primary);">Strategic expertise delivering measurable results</p>
+                    <p style="font-size: 1.1rem; margin-top: 1rem; color: var(--dark);">Creating millions in value through strategic planning and implementation</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Case Studies</h2>
+                
+                <div class="case-studies">
+                    <div class="case-study">
+                        <div class="case-header">
+                            <h3 class="case-title">International Expansion</h3>
+                            <p class="case-client">Medical Device Manufacturer</p>
+                        </div>
+                        <div class="case-content">
+                            <div class="case-section">
+                                <h4>Challenge:</h4>
+                                <p>Global leader in specialized AFO (Ankle-Foot Orthosis) products needed to expand distribution network across international markets</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>Solution:</h4>
+                                <p>Implemented targeted market entry strategy with distributor partnerships and region-specific approach for AFO product categories</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>Results:</h4>
+                                <p>33% year-over-year sales growth in key markets for AFO products with sustainable distributor relationships</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study">
+                        <div class="case-header">
+                            <h3 class="case-title">Revenue Growth</h3>
+                            <p class="case-client">B2B Product Company</p>
+                        </div>
+                        <div class="case-content">
+                            <div class="case-section">
+                                <h4>Challenge:</h4>
+                                <p>Company needed to optimize sales approach to drive sustainable growth</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>Solution:</h4>
+                                <p>Developed data-driven sales strategy and targeted customer acquisition plan</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>Results:</h4>
+                                <p>Generated over $1.4M in revenue growth for AFO products through optimized market approach and created millions in value through strategic implementation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Page -->
+        <section class="page">
+            <div class="section">
+                <h2 class="section-title">Strategic Services</h2>
+                
+                <div class="services">
+                    <h3>Market Development Services</h3>
+                    <p style="margin-bottom: 1rem;">Our strategic services are designed to help businesses achieve sustained growth:</p>
+                    
+                    <ul class="services-list">
+                        <li>
+                            <span class="icon">✓</span>
+                            <span><strong>Market Analysis:</strong> Comprehensive assessment of opportunities</span>
+                        </li>
+                        <li>
+                            <span class="icon">✓</span>
+                            <span><strong>Strategic Planning:</strong> Targeted growth initiatives with clear objectives</span>
+                        </li>
+                        <li>
+                            <span class="icon">✓</span>
+                            <span><strong>Implementation Support:</strong> Hands-on execution of strategic plans</span>
+                        </li>
+                        <li>
+                            <span class="icon">✓</span>
+                            <span><strong>Performance Measurement:</strong> Data-driven evaluation of results</span>
+                        </li>
+                        <li>
+                            <span class="icon">✓</span>
+                            <span><strong>Growth Acceleration:</strong> Scaling successful initiatives</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Enhanced by AI Learning</h3>
+                        <p>As a participant in the AI for Leaders program, I am developing expertise in leveraging artificial intelligence to:</p>
+                        <ul style="padding-left: 1.5rem; margin-top: 1rem;">
+                            <li>Enhance market intelligence and competitive analysis</li>
+                            <li>Optimize business processes and decision-making</li>
+                            <li>Develop data-driven growth strategies</li>
+                            <li>Create business impact with minimal resource investment</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Market Development</h3>
+                        <p>Our market development services help businesses:</p>
+                        <ul style="padding-left: 1.5rem; margin-top: 1rem;">
+                            <li>Identify and assess market opportunities</li>
+                            <li>Build strategic partnerships for growth</li>
+                            <li>Develop effective go-to-market strategies</li>
+                            <li>Establish sustainable distribution channels</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Page -->
+        <section class="contact">
+            <h2>Get in Touch</h2>
+            <p style="margin-bottom: 2rem;">Let's discuss how strategic market development can help your business achieve international growth and success.</p>
+            
+            <div class="contact-info">
+                <div class="contact-detail">
+                    <span class="contact-label">Contact:</span>
+                    <span>Timothy Sharp</span>
+                </div>
+                
+                <div class="contact-detail">
+                    <span class="contact-label">Role:</span>
+                    <span>Business Consultant | Market Development Expert</span>
+                </div>
+                
+                <div class="contact-detail">
+                    <span class="contact-label">Email:</span>
+                    <span>sharptimal@gmail.com</span>
+                </div>
+                
+                <div class="contact-detail">
+                    <span class="contact-label">Phone:</span>
+                    <span>(405) 532-4525</span>
+                </div>
+                
+                <div class="contact-detail">
+                    <span class="contact-label">Location:</span>
+                    <span>Norman, OK (Flexible for Remote Work in USA, North America & EU)</span>
+                </div>
+            </div>
+            
+            <p style="margin-top: 2rem; font-size: 1.2rem; font-weight: bold;">TAS Business Solutions has created millions in value for clients through strategic planning and implementation.</p>
+        </section>
+        
+        <footer class="footer">
+            <p>TAS Business Solutions, LLC</p>
+            <p>Driving growth, innovation & improving outcomes since 2018</p>
+        </footer>
+    </div>
+</body>
+</html>
